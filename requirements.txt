@@ -1,0 +1,14 @@
+torch>=2.1
+torchvision>=0.16
+timm>=0.9
+opencv-python
+mediapipe
+albumentations
+pandas
+numpy
+scikit-learn
+matplotlib
+wandb
+dvc[gdrive]
+pyyaml
+gradio

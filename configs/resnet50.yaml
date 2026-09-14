@@ -1,0 +1,25 @@
+model:
+  name: resnet50
+  pretrained: true
+  num_age_bins: 101   # edades 0-100
+
+data:
+  dataset_path: data/raw/utkface
+  image_size: 224
+  batch_size: 32
+  val_split: 0.15
+  test_split: 0.15
+  split_by_identity: false   # true si el dataset trae ID de persona
+
+train:
+  epochs: 30
+  lr: 0.0003
+  optimizer: adamw
+  weight_decay: 0.0001
+  loss: dex_expectation   # clasificación + esperanza (DEX)
+  mixed_precision: true
+  early_stopping_patience: 5
+
+logging:
+  wandb_project: age-estimation-cnn
+  checkpoint_dir: models/checkpoints/resnet50
